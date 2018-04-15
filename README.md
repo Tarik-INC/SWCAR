@@ -18,8 +18,9 @@ public/
       index/
       pages/ 
 ```
-Esses diretórios são:
--  Pasta **src** onde serão inseridos arquivos integrantes do back-end  
+Essas pastas representam:
+-  Pasta **src** onde serão inseridos arquivos integrantes do back-end
+   -Pasta **swcar** de arquivos criados pelo framework Django na inicialização do projeto
 
 -  Pasta **public** onde são armazenadoas as arquivos de interface gráfica disponível ao usuário, sendo esta dividida em:
    - Pages, onde são colocadas as páginas html, com exceção da primeira, e arquivos css e javascript. 
