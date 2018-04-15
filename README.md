@@ -1,7 +1,8 @@
 # SWCAR
-Sistema web de controle de atividades e recompensas, projeto apresentado como parte integrante a disicplina GCC188 - Engenharia de software ofertada pelo Departamento de Ciência da Computação localizado na Universidade Federal de Lavras.
+### Sistema web de Controle de Atividades e Recompensas
+Um projeto apresentado como parte integrante a disicplina GCC188 - Engenharia de software ofertada pelo Departamento de Ciência da Computação localizado na Universidade Federal de Lavras.
 
-### Estrutura do Projeto
+## Estrutura do Projeto
 
 A estrutura do projeto se apresenta como a seguinte:
 
