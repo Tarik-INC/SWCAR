@@ -9,11 +9,10 @@ A estrutura do projeto se apresenta como a seguinte:
 src/
   manage.py
   scar/
-    __init_.py
+    __init__.py
     settings.py
     urls.py
     wsgi.py
-    
 public/
       index/
       pages/
