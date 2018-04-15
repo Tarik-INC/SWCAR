@@ -19,7 +19,7 @@ public/
       pages/ 
 ```
 Esses diretórios são:
--  Pasta **src** onde serão inseridos arquivos de configuração do back-end
+-  Pasta **src** onde serão inseridos arquivos integrantes do back-end  
 
 -  Pasta **public** onde são armazenadoas as arquivos de interface gráfica disponível ao usuário, sendo esta dividida em:
    - Pages, onde são colocadas as páginas html, com exceção da primeira, e arquivos css e javascript. 
