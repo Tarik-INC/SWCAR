@@ -15,7 +15,7 @@ src/
     urls.py
     wsgi.py
 public/
-      index/
+      index.html
       pages/ 
 ```
 Essas pastas representam:
@@ -23,7 +23,6 @@ Essas pastas representam:
    - Pasta **swcar** de arquivos criados pelo framework Django na inicialização do projeto
 
 -  Pasta **public** onde são armazenadoas as arquivos de interface gráfica disponível ao usuário, sendo esta dividida em:
-   - Pages, onde são colocadas as páginas html, com exceção da primeira, e arquivos css e javascript. 
+   - Pages, onde são colocadas as páginas html, com exceção da primeira, e arquivos css e javascript. Index é a primeira página presentada pelo sistema.
    
-   - Index, onde estará armazenada a página inicial html do sistema
 
