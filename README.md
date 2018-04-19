@@ -7,6 +7,8 @@ Um projeto apresentado como parte integrante a disicplina GCC188 - Engenharia de
 A estrutura do projeto se apresenta como a seguinte:
 
 ```
+documentos/
+  requesitos/
 src/
   manage.py
   swcar/
@@ -19,10 +21,12 @@ public/
       pages/ 
 ```
 Essas pastas representam:
--  Pasta **src** onde serão inseridos arquivos integrantes do back-end
-   - Pasta **swcar** de arquivos criados pelo framework Django na inicialização do projeto
-
--  Pasta **public** onde são armazenadoas as arquivos de interface gráfica disponível ao usuário, sendo esta dividida em:
-   - Pages, onde são colocadas as páginas html, com exceção da primeira, e arquivos css e javascript. Index é a primeira página presentada pelo sistema.
+* Pasta **src** onde serão inseridos arquivos integrantes do back-end.
+  * Subpasta **swcar** de arquivos criados pelo framework Django na inicialização do projeto.
+  
+* Pasta **public** onde são armazenadoas as arquivos de interface gráfica disponível ao usuário.
+  * Subpasta **pages**, onde são colocadas as páginas html, com exceção da primeira, e arquivos css e javascript. Index é a primeira página presentada pelo sistema.
+  
+* Pasta **documentos** onde ficarão armaze nados documentos criados durante a iteração do desenvolvimento de software.
+  * Subpasta **requesitos**, onde é organizados os arquivos referente aos requesitos levantados do projeto.
    
-
