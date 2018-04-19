@@ -27,7 +27,7 @@ Essas pastas representam:
 * Pasta **public** onde são armazenadoas as arquivos de interface gráfica disponível ao usuário.
   * Subpasta **pages**, onde são colocadas as páginas html, com exceção da primeira, e arquivos css e javascript. Index é a primeira página presentada pelo sistema.
   
-* Pasta **documentos** onde ficarão armazenados documentos criados durante a iteração do desenvolvimento de software.
+* Pasta **documentos** onde ficarão armazenados as documentações criados durante o desenvolvimento de software.
   * Subpasta **requesitos**, onde é organizados os arquivos referente aos requesitos levantados do projeto.
    
 ##  Política de uso do git
