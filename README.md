@@ -34,7 +34,7 @@ Essas pastas representam:
 
 1. **Commit**: Commits somente devem ser realizados em casos de correção de bugs, adição de novas funçoes ao programa, ou criação de arquivos necessários ao projeto.
 
-2. **Branch**: Branches devem ser criadas objetiviando o densenvolvimento de uma nova funcionalidade experimental do sistema. Convencionalmente branches devem possuir o número do desenvolvedor seguido por um hífen de qual funcionalidade está sendo testada.
+2. **Branch**: Branches devem ser criadas objetivando o densenvolvimento de uma nova funcionalidade experimental do sistema, logo o desenvolvimento deve ser realizado em uma branch separada e seu código suficientemente testado antes de realizar a merge. Convencionalmente, branches devem possuir o número do desenvolvedor seguido por um hífen de qual funcionalidade está sendo testada.
 
 3. **Merge**: Merge entres branches ou a merge entre uma branch e a master devem ocorrer apenas em situaçoes em que a nova funcionalidade está satisfatoriamente testada e pode ser integrada ao fluxo em que a branch foi ramificada.
 
