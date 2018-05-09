@@ -2,6 +2,10 @@
 ### Sistema Web de Controle de Atividades e Recompensas
 Um projeto apresentado como parte integrante a disicplina GCC188 - Engenharia de software ofertada pelo Departamento de Ciência da Computação localizado na Universidade Federal de Lavras.
 
+## Tecnologias utilizadas
+- Back-end: framework Django. Django é uma ferramenta open-source, sendo a escolha do grupo por possir uma comunidade influente e ativa, possuindo vários tutorias e exemplos, e ser de fácil aprendizado e manuseio e para programadores python, ajudando a abstrair vários detalhes no desenvolvimento web. 
+- Front-end: Bootstrap, html, css e javascript.O Boostrap é uma ferramenta web caracterizada como um framework front-end, que possui padronizações que auxiliam no desenvolvimento de sites esteticamente agradáveis e de boa usabilidade, além de contar com recursos visuais pré-construídos que podem ser facilmente integrado ao projeto e de auxiliar na estrutura dos layouts. Junto ao bootstrap poderão ser utilizados as três linguaguens web principais, o html, css e o javascript, na criação e aprimoramento de  recursos visuais. 
+
 ## Estrutura do Projeto
 
 A estrutura do projeto se apresenta como a seguinte:
