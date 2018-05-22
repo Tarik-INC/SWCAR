@@ -17,3 +17,16 @@ class Atividade(models.Model):
 
     def __str__(self):
         return f'Atividade: {self.nome}\n'
+
+class Usuario(models.Model):
+    nome = models.CharField(max_length = 30)
+    cpf = models.CharField(max_length = 11)
+    escolha_sexo = (
+        ('masc', 'masculino'),
+        ('fem', 'feminino'),
+        ('open', 'não declarado')
+    )
+
+    sexo = models.CharField(max_length = 20, choices = escolha_sexo,default =  'open' )
+    senha = models.CharField(max_length = 50)
+    professor = models.BooleanField(default = False)
