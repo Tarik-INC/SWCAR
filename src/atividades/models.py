@@ -4,7 +4,7 @@ class Atividade(models.Model):
     nome = models.CharField(max_length = 30)
     descricao = models.TextField(max_length=200)
     prazo = models.DateTimeField()
-    em_grupo = models.BooleanField(default =  False)
+    em_equipe = models.BooleanField(default =  False)
     object = models.Manager()
 
     escolha_trofeu = (
