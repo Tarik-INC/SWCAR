@@ -123,3 +123,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     'public/statics'
 ]
+
+#Local da pasta referência de media 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'Documents/ProjetoES/media')
+
+MEDIA_URL =  '/media/'
+
