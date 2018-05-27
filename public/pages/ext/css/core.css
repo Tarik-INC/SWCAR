@@ -1,0 +1,85 @@
+p {
+    font-size: 12px !important;
+    font-family: 'Arial', sans-serif !important;
+    color: rgb(0, 0, 0) !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+h1 {
+    font-size: 30px !important;
+    font-family: 'Raleway', sans-serif !important;
+    color: rgb(9,132,227) !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+h2 {
+    font-size: 15px !important;
+    font-weight: 700 !important ;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif !important;
+    color: rgb(255, 255, 255) !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+h3 {
+    font-size: 12px !important;
+    font-weight: 700 !important ;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif !important;
+    color: rgb(0, 0, 0) !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+h1:first-letter {
+    text-transform: uppercase;
+}
+.menu {
+    background: rgb(9,132,227);
+}
+.menu ul li .nav-link, .navbar-brand{
+    color: #FFFFFF !important;
+    font-family: 'Raleway', sans-serif;
+}
+.navbar-brand {
+    font-weight: 700;
+}
+#conteudoAtividade {
+    padding: 5% 0% 5% 0%;
+}
+table {
+    width: 100%;
+}
+table thead tr td {
+    background: rgb(9,132,227);
+    text-align: center;
+    padding: 1%;
+}
+table tbody tr td {
+    text-align: center;
+    padding: 0%;
+    border: solid 1px #000000;
+}
+table tbody tr:first-child td {
+    padding: 0.5%;
+}
+table tbody tr td .subtd img{
+    width: 50%;
+}
+table tbody tr td .subtd:nth-child(1), table tbody tr td .subtd:nth-child(3) {
+    width: 20%;
+    float: left;
+}
+table tbody tr td .subtd:nth-child(2) {
+    border-left: solid 1px #000;
+    border-right: solid 1px #000;
+    width: 60%;
+    float: left;
+}
+table tbody tr td .subtd img, table tbody tr td .subtd p {
+    margin: 0px auto !important;
+}
+
+table tbody tr td .subtd:nth-child(3) {
+    padding-top: 20%;
+}
+
