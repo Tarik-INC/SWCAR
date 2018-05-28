@@ -4,7 +4,7 @@ from .forms import AtividadeForm
 
 def listar_atividades(request):
     atividades = Atividade.object.all();
-    return render(request, 'pages/atividades.html', {'atividades':atividades})
+    return render(request, 'pages/atividades.html', {'atividades':atividades.order_by('nome')})
 
 
 def criar_atividade(request):
