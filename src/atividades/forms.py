@@ -6,7 +6,7 @@ from datetime import datetime
 class AtividadeForm(ModelForm):
     class Meta:
         model = Atividade
-        fields = ['nome', 'descricao', 'prazo', 'em_equipe', 'trofeu1', 'trofeu2']
+        fields = ['nome', 'descricao', 'prazo', 'em_equipe', 'trofeu']
 
     def clean_nome(self):
         nome = self.cleaned_data['nome'] 

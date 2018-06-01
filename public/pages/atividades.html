@@ -1,21 +1,154 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    
-    <h1> Playlist de atividades</h1>
-    <ul>
-        {%for atividade in  atividades %}
-    
-        <li><a href = "{% url 'editar_atividade' atividade.id %}" </a>{{atividade}}</li>
+{% extends "pages/base_atividades.html" %}
+{% load static %}
 
-         {% endfor %}
-    </ul>
-    
+
+
+{% block title%} SWCAR - Lista de Atividades {% endblock %}
+
+{% block main %}
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light menu">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">SWCAR</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="turmas.html">Turmas</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="atividades.html">Atividades
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ranking.html">Ranking</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="conteudoAtividade">
+            <div class="container">
+                <div class="p-3 mb-2 bg-primary text-white">
+                    <div class = "row">
+                        <h1 class = "mx-auto"> Lista de Atividades </h1>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td colspan="5">
+                                    <h2>segunda iteração</h2>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h3>gerência de configuração</h3>
+                                </td>
+                                <td>
+                                    <h3>gerência de configuração</h3>
+                                </td>
+                                <td>
+                                    <h3>gerência de configuração</h3>
+                               </td>
+                                <td>
+                                    <h3>gerência de configuração</h3>
+                                </td>
+                                <td>
+                                    <h3>gerência de configuração</h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >
+                                    <div class="subtd">
+                                        <img src="{% static 'img/trophy.svg' %}" class = "img-thumbnail" />
+                                    </div>
+                                    <div class="subtd">
+                                        <p>definir e seguir políticas e usos do git no leia-me do projeto (minimo: estrutura
+                                            de pastas e regras do commit)</p>
+                                    </div>
+                                    <div class="subtd">
+                                        <p>29/05</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="subtd">
+                                        <img src="{% static 'img/trophy2.svg' %}" />
+                                    </div>
+                                    <div class="subtd">
+                                        <p>definir e seguir políticas e usos do git no leia-me do projeto (minimo: estrutura
+                                            de pastas e regras do commit)</p>
+                                    </div>
+                                    <div class="subtd">
+                                        <p>29/05</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="subtd">
+                                        <img src="img/trophy.svg" />
+                                    </div>
+                                    <div class="subtd">
+                                        <p>definir e seguir políticas e usos do git no leia-me do projeto (minimo: estrutura
+                                            de pastas e regras do commit)</p>
+                                    </div>
+                                    <div class="subtd">
+                                        <p>29/05</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="subtd">
+                                        <img src="img/trophy.svg" />
+                                    </div>
+                                    <div class="subtd">
+                                        <p>definir e seguir políticas e usos do git no leia-me do projeto (minimo: estrutura
+                                     pip install django-bootstrap-form      de pastas e regras do commit)</p>
+                                    </div>
+                                    <div class="subtd">
+                                        <p>29/05</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="subtd">
+                                        <img src="img/trophy.svg" />
+                                    </div>
+                                    <div class="subtd">
+                                        <p>definir e seguir políticas e usos do git no leia-me do projeto (minimo: estrutura
+                                            de pastas e regras do commit)</p>
+                                    </div>
+                                    <div class="subtd">
+                                        <p>29/05</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
 </body>
-</html>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+{% endblock %}

@@ -11,7 +11,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR = os.path.expanduser('~')
+BASE_DIR = os.path.expanduser('~') + '/Documents/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -28,6 +28,7 @@ ALLOWED_HOSTS = []
 # Application define
 
 INSTALLED_APPS = [
+    'bootstrapform',
     'atividades.apps.AtividadesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -52,7 +53,7 @@ ROOT_URLCONF = 'swcar.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'Documents/ProjetoES/public')],
+        'DIRS': [os.path.join(BASE_DIR, 'ProjetoES/public')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,14 +119,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL =  '/static/'
+
 
 STATICFILES_DIRS = [
-    'public/statics'
+    os.path.join(BASE_DIR,'ProjetoES/public/pages'),
 ]
 
 #Local da pasta referência de media 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'Documents/ProjetoES/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'ProjetoES/media')
 
 MEDIA_URL =  '/media/'
 
