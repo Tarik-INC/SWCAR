@@ -16,6 +16,10 @@ class AtividadeFormTestes(TestCase):
         self.EM_EQUIPE = True
 
     def test_atividade_prazo_passado(self):
+        """[Método responsável por testar se atividades cadastradas que
+            possuem inconsistência no prazo(prazo devem ser uma data futura)
+            são rejeitadas pelo sistema]
+        """
 
         AtividadePrazoErrado = Atividade(nome=self.NOME_CORRETO, descricao=self.DESCRICAO,
                                          prazo=self.PRAZO_INCORRETO, em_equipe=self.EM_EQUIPE, trofeu=self.TROFEU)
@@ -24,7 +28,10 @@ class AtividadeFormTestes(TestCase):
         self.assertEquals(FormAtividadePrazoErrado.is_valid(), False)
 
     def test_atividade_nome_incorreto(self):
-
+        """[Método responsável por testar se atividades cadastradas que 
+            possuem nomes começando com letras são rejeitadas pelo sistema]
+        """
+       
         AtividadeNomeIncorreto = Atividade(nome=self.NOME_INCORRETO, descricao=self.DESCRICAO,
                                            prazo=self.PRAZO_CORRETO, em_equipe=self.EM_EQUIPE, trofeu=self.TROFEU)
 
@@ -33,6 +40,9 @@ class AtividadeFormTestes(TestCase):
         self.assertEquals(FormAtividadeNomeIncorreto.is_valid(), False)
 
     def test_atividade_preenchida_corretamente(self):
+        """[Método responsável por testar se atividades cadastradas são aceitas
+            pelo sistema]
+        """
 
         AtividadeNomeCorreto = Atividade(nome=self.NOME_CORRETO, descricao=self.DESCRICAO,
                                          prazo=self.PRAZO_CORRETO, em_equipe=self.EM_EQUIPE, trofeu=self.TROFEU)
