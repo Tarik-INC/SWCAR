@@ -14,7 +14,7 @@ class AtividadeForm(ModelForm):
         if(nome[0].isdigit()):
             raise ValidationError('Nome de atividades não podem começar com letras')
         elif(nome.length <= 3 ):
-            raise ValidationError("Nome de atividade muito curto, utiliza pelo menos 4 caracteres")
+            raise ValidationError("Nome de atividade muito curto, utilize pelo menos 4 caracteres")
 
         return nome
     
@@ -22,6 +22,6 @@ class AtividadeForm(ModelForm):
         data_completa_prazo = self.cleaned_data['prazo']
 
         if (datetime.now() >= data_completa_prazo):
-            raise ValidationError('Prazo inserido está no passado, logo ele é incoerente')
+            raise ValidationError('Prazo inserido está incorreto')
         
         return data_completa_prazo
