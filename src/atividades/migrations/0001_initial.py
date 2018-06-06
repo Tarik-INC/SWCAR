@@ -15,12 +15,14 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Atividade',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('nome', models.CharField(max_length=30)),
                 ('descricao', models.TextField(max_length=200)),
                 ('prazo', models.DateTimeField()),
                 ('tipo', models.BooleanField(default=True)),
-                ('trofeu', models.IntegerField(choices=[(3, 'Bronze'), (5, 'Prata'), (7, 'Ouro')], default=1)),
+                ('trofeu', models.IntegerField(choices=[
+                 (3, 'Bronze'), (5, 'Prata'), (7, 'Ouro')], default=1)),
             ],
             managers=[
                 ('object', django.db.models.manager.Manager()),

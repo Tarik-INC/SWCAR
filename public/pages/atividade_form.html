@@ -1,0 +1,12 @@
+{% extends "pages/base_atividades.html" %}
+{% load bootstrap %}
+
+
+{% block main %}
+    <form action="" method="POST">
+        {% csrf_token %} 
+        {{form | bootstrap}}
+        <button type="submit" class="btn btn-primary"> Salvar</button>
+    </form>
+
+{% endblock %}
