@@ -4,6 +4,14 @@ from .forms import AtividadeForm
 
 
 def listar_atividades(request):
+    """[View resposável por redirecionar a requesição do usuário para a tela de exibição da lista de atividades, organizadas por nome]
+    
+    Args:
+        request ([HttpRequest]): [Objeto que contem metadados sobre a requisição]
+    
+    Returns:
+        [HttpResponse]: [Combina um template e um contexto e retorna um objeto HttpResponse com o texto renderizado]
+    """
     atividades = Atividade.object.all()
 
     context = {
@@ -14,6 +22,14 @@ def listar_atividades(request):
 
 
 def criar_atividade(request):
+    """[View resposável  por sintetizar um formulário de cadastro de atividades em uma página HTML  ou gravar no BD os dados gerados pelo POST da requisição] 
+    
+    Args:
+        request ([HttpRequest]): [Objeto que contem metadados sobre a requisição]
+    
+    Returns:
+        [HttpResponse]: [Combina um template e um contexto e retorna um objeto HttpResponse com o texto renderizado]
+    """
     form_atividade = AtividadeForm(request.POST or None)
 
     if(form_atividade.is_valid()):
@@ -24,6 +40,16 @@ def criar_atividade(request):
 
 
 def editar_atividade(request, id):
+
+    """[View resposável por sintetizar um formulário de edição de atividades em uma página HTML  ou gravar no BD os dados alterados pelo POST da requisição] 
+    
+    Args:
+        request ([HttpRequest]): [Objeto que contem metadados sobre a requisição]
+        id ([int]): [Número de índice primário utilizado para obter um objeto Atividade no banco de dados]
+    
+    Returns:
+        [HttpResponse]: [Combina um template e um contexto e retorna um objeto HttpResponse com o texto renderizado]
+    """
     atividade = get_object_or_404(Atividade, pk=id)
     form_atividade = AtividadeForm(request.POST or None, instance=atividade)
 
@@ -32,3 +58,23 @@ def editar_atividade(request, id):
         return redirect('playlist')
 
     return render(request, 'pages/atividade_form.html', {'form': form_atividade})
+
+
+def deletar_atividade(request, id):
+    """[View resposável por sintetizar um formulário de deleção de atividades em uma página HTML  ou gravar no BD os dados removidos pelo POST da requisição] 
+    
+    Args:
+        request ([HttpRequest]): [Objeto que contem metadados sobre a requisição]
+        id ([int]): [Número de índice primário utilizado para obter um objeto Atividade no banco de dados]
+    
+    Returns:
+        [HttpResponse]: [Combina um template e um contexto e retorna um objeto HttpResponse com o texto renderizado]
+    """
+    atividade = get_object_or_404(Atividade, pk=id)
+    form_atividade = AtividadeForm(request.POST or None, instance=atividade)
+
+    if request.method == 'POST':
+        atividade.delete()
+        return redirect('playlist')
+
+    return render(request, 'pages/atividade_delete_confirm.html', {'form': form_atividade})
