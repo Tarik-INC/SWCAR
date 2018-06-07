@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "/home/tarik/.pyenv/versions/3.6.5/bin/python",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true
+}
