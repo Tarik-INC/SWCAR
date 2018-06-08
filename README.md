@@ -42,7 +42,11 @@ Essas pastas representam:
 
 3. **Master**: Na master estará localizado a ultima versão estável do sistema. A merge é protegida, portanto, com exceção do dono do projeto, commits diretamente na merge são bloqueados e devem passar por uma revisão de código por parte do dono do projeto. A master armazena o código que será referenciando na baseline do sistema.
 
-## Politica de codificação
+## Padrões de codificação
 
-**Python**: Todos os nomes de classes devem começar por maiúsculo.
-             Todos os nomes de metodo devem começar por minúsculo
+**Python**
+* Todo código deverá ser escrito em português.
+* Documentação(Docstrings) criados por menbros da equipe devem estar em português, salvo a documentação criada                 pelo django, que auxilia o densevolvimento, que se apresenta em inglês.
+* Todos os nomes de classes devem começar por maiúsculo, seguindo o padrão CamelCase e representar um                           substantivo.
+- Todos os nomes de variáveis e metódos devem começar por minúsculo, seguir o padrao snake_case, com as variáveis               representando um susbtantivo e metódos uma ação verbal.
+- O código deve ser idententado utilizando uma tab segundo a recomendação do [pylint](https://www.pylint.org/).
