@@ -45,4 +45,4 @@ Essas pastas representam:
 ## Politica de codificação
 
 **Python**: Todos os nomes de classes devem começar por maiúsculo.
-             Todos os jomes de metodo devem começar por minúsculo
+             Todos os nomes de metodo devem começar por minúsculo
