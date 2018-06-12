@@ -44,9 +44,16 @@ Essas pastas representam:
 
 ## Padrões de codificação
 
-**Python**
+**Python-Django**:
 * Todo código deverá ser escrito em português.
 * Documentação(Docstrings) criados por menbros da equipe devem estar em português, salvo a documentação criada                 pelo django, que auxilia o densevolvimento, que se apresenta em inglês.
 * Todos os nomes de classes devem começar por maiúsculo, seguindo o padrão CamelCase e representar um                           substantivo.
-- Todos os nomes de variáveis e metódos devem começar por minúsculo, seguir o padrao snake_case, com as variáveis               representando um susbtantivo e metódos uma ação verbal.
-- O código deve ser idententado utilizando uma tab segundo a recomendação do [pylint](https://www.pylint.org/).
+* Todos os nomes de variáveis e metódos devem começar por minúsculo, seguir o padrao snake_case, com as variáveis               representando um susbtantivo e metódos uma ação verbal.
+* O código deve ser idententado utilizando uma tab segundo a recomendação do [pylint](https://www.pylint.org/).
+
+**HTML**:
+* Todos os documentos HTML devem usar um tab  para recuo e não deve haver nenhum espaço em branco à direita.
+* todos os atributos devem  ser descritos com aspas duplas.
+* Todos os documentos devem estar usando o tipo de documento HTML5 e o elemento <html> deve ter um atributo "lang". O <head>   também deve incluir, no mínimo, meta tags "viewport" e "charset".
+* As classes devem idealmente ser usadas apenas como meios de estilo(CSS). Se você precisar incluir dados adicionais no documento HTML, por exemplo, para passar dados para JavaScript, os atributos do tipo "data"  deverão ser usados
+  
