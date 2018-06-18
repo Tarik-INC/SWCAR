@@ -1,0 +1,24 @@
+{% extends "pages/base_atividades.html" %}
+{% load bootstrap %}
+
+
+{% block main %}
+   
+        <div class = "col-md-6 offset-md-3"> 
+            <div class = "jumbotron">
+            
+                <div class="page-header">
+                        <h1 class = "text-center">Tem certeza que deseja deletar a atividade abaixo?</h1>
+                </div>    
+                <form action="" method="POST">
+                    {% csrf_token %} 
+                    {{form | bootstrap}}
+                    <div style = "text-align: center;">
+                        <button type="submit" class="btn btn-danger text-center"> Deletar </button>
+                    </div>
+                </form>
+            </div>
+        </div>   
+   
+ 
+{% endblock %}
