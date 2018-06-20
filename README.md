@@ -36,8 +36,24 @@ Essas pastas representam:
    
 ##  Política de uso do git
 
-1. **Commit**: Commits somente devem ser realizados em casos de correção de bugs, adição de novas funçoes ao programa, aprimoramento de funcionalidades ou criação de arquivos necessários ao projeto. Cada commit deve possuir uma mensagem objetiva e clara, especificando qual foi a alteração para o restante da equipe de desenvolvimento.Nesse contexnto, a mensagem deve ser composta pela descrição de qual é objetivo do commit aliado a funcionalidade alvo em concordancia ao backlog, exemplos: 'Incluindo funcionalidades RF-X e/ou RF-Y', 'Aprimorando funcionalidades RF-X e/ou RF-Y' e 'Fix das funcionalidades RF-X e/ou RF-Y'.Tags devem ser utilizadas em commits que descrevem uma finalização completa de funcionalidades, objetivando melhor organização do projeto sobre oq ue foi feito. Logo, tags devem possuir um rótulo que determina quais conjunto de funcionalidades foram completas.
+1. **Commit**: Commits somente devem ser realizados em casos de correção de bugs, adição de novas funçoes ao programa, aprimoramento de funcionalidades ou criação de arquivos necessários ao projeto. Cada commit deve possuir uma mensagem objetiva e clara, especificando qual foi a alteração para o restante da equipe de desenvolvimento.Nesse contexnto, a mensagem deve ser composta pela descrição de qual é objetivo do commit aliado a funcionalidade alvo em concordancia ao backlog, exemplos: 'Incluindo funcionalidades RF-X e/ou RF-Y', 'Aprimorando funcionalidades RF-X e/ou RF-Y' e 'Fix das funcionalidades RF-X e/ou RF-Y'.Tags devem ser utilizadas em commits que descrevem uma finalização completa de funcionalidades, objetivando melhor organização do projeto sobre o que foi feito. Logo, tags devem ser descritivias em relação as funcionalidades completa. Caso o commit não seja realizado objetivando criar ou reparar funcionalidades,como por exemplo adicionar arquivos ou realizar modificação em arquivos pre-existentes, as mensagens deverão conter de forma clara o que se está alterando ou incluindo,e de preferência em quais arquivos as modificações estão sendo aplicadas.
 
 2. **Branch**: Existem dois tipos de branches sem citar a master. Branch de teste, que representa a branch em que as funcionalidades commitadas passam por testes, formalizando conclusões sobre a necessidade de correções,  se a funcionalidade desenvolvida acrescenta algo ao sistema ou se está de acordo com os requesistos documentados no backlog. Branch da iteracão, que possui um backup da master, é nela em que as funcionalidades criadas e testadas são integradas ao restante do sistema, observando qualquer incoerência ou conflito com o que já foi desenvolvido e suficientemente testado. 
 
 3. **Master**: Na master estará localizado a ultima versão estável do sistema. A merge é protegida, portanto, com exceção do dono do projeto, commits diretamente na merge são bloqueados e devem passar por uma revisão de código por parte do dono do projeto. A master armazena o código que será referenciando na baseline do sistema.
+
+## Padrões de codificação
+
+**Python-Django**:
+* Todo código deverá ser escrito em português.
+* Documentação(Docstrings) criados por menbros da equipe devem estar em português, salvo a documentação criada                 pelo django, que auxilia o densevolvimento, que se apresenta em inglês.
+* Todos os nomes de classes devem começar por maiúsculo, seguindo o padrão CamelCase e representar um                           substantivo.
+* Todos os nomes de variáveis e metódos devem começar por minúsculo, seguir o padrao snake_case, com as variáveis               representando um susbtantivo e metódos uma ação verbal.
+* O código deve ser idententado utilizando uma tab segundo a recomendação do [pylint](https://www.pylint.org/).
+
+**HTML**:
+* Todos os documentos HTML devem usar um tab  para recuo e não deve haver nenhum espaço em branco à direita.
+* todos os atributos devem  ser descritos com aspas duplas.
+* Todos os documentos devem estar usando o tipo de documento HTML5 e o elemento <html> deve ter um atributo "lang". O <head>   também deve incluir, no mínimo, meta tags "viewport" e "charset".
+* As classes devem idealmente ser usadas apenas como meios de estilo(CSS). Se você precisar incluir dados adicionais no documento HTML, por exemplo, para passar dados para JavaScript, os atributos do tipo "data"  deverão ser usados
+  
