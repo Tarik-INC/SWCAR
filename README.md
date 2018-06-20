@@ -53,6 +53,7 @@ Essas pastas representam:
 
 **HTML**:
 * Todos os documentos HTML devem usar um tab  para recuo e não deve haver nenhum espaço em branco à direita.
+* Toda tag de fechamento devem possuir o mesmo recuo da tag  de abertura, facilitando a organização de código.
 * todos os atributos devem  ser descritos com aspas duplas.
 * Todos os documentos devem estar usando o tipo de documento HTML5 e o elemento <html> deve ter um atributo "lang". O <head>   também deve incluir, no mínimo, meta tags "viewport" e "charset".
 * As classes devem idealmente ser usadas apenas como meios de estilo(CSS). Se você precisar incluir dados adicionais no documento HTML, por exemplo, para passar dados para JavaScript, os atributos do tipo "data"  deverão ser usados
