@@ -76,7 +76,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-            'read_default_file': '/etc/mysql/my.cnf',
+            'read_default_file': '/etc/my.cnf',
             'init_command': 'SET default_storage_engine=INNODB',
         }
     }
@@ -119,15 +119,14 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL =  '/static/'
+STATIC_URL = '/static/'
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'ProjetoES/public/pages'),
+    os.path.join(BASE_DIR, 'ProjetoES/public/pages'),
 ]
 
-#Local da pasta referência de media 
+# Local da pasta referência de media
 MEDIA_ROOT = os.path.join(BASE_DIR, 'ProjetoES/media')
 
-MEDIA_URL =  '/media/'
-
+MEDIA_URL = '/media/'
