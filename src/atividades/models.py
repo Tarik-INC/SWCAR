@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import AbstractBaseUser,BaseUserManager
 """
 class Trofeu(models.Model):
     nome = models.CharField(max_length=30)
@@ -46,14 +46,48 @@ class Atividade(models.Model):
          Trofeu, related_name='trofeu3', on_delete=models.PROTECT, blank=True, null=True)
 '''
 
+class UsuarioManager(BaseUserManager):
 
-    
+    def create_user(self, email, cpf, sexo, professor, password=None):
+        """
+        Cria e salva um usuário com dado email, cpf, sexo,
+        se ele é professor e senha opcional
+        """
+        if not email:
+            raise ValueError('Usuários deverão possuir um email')
+
+        user = self.model(
+            email=self.normalize_email(email),
+            cpf=cpf,
+            sexo = sexo,
+            professor = professor
+        )
+
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, cpf, sexo, professor, password):
+        """
+        Cria e salva um super usuário com dado email, cpf, sexo, se ele
+        é professor e senha obrigatória 
+        """
+        user = self.create_user(
+            email,
+            cpf=cpf,
+            sexo = sexo,
+            professor = professor,
+            password=password
+        )
+        user.is_admin = True
+        user.save(using=self._db)
+        return user
 
 
-class Usuario(models.Model):
+class Usuario(AbstractBaseUser):
     nome = models.CharField(max_length=30)
     cpf = models.CharField(max_length=11, primary_key = True)
-    email = models.EmailField(max_length = 120, default = 'exemplo@exemplo.com')
+    email = models.EmailField(max_length = 120, default = 'exemplo@exemplo.com', unique =True)
     instituicao = models.CharField(max_length = 50, blank = True, null = True)
     escolha_sexo = (
         ('masc', 'masculino'),
@@ -63,5 +97,29 @@ class Usuario(models.Model):
 
     sexo = models.CharField(
         max_length=20, choices=escolha_sexo, default='open')
-    senha = models.CharField(max_length=50)
     professor = models.BooleanField(default=False)
+    password = models.CharField(max_length=50)
+    objects = UsuarioManager()
+    is_active = models.BooleanField(default=True)
+    is_admin = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.email
+    
+    def get_short_name(self):
+        return self.nome
+    
+    @property
+    def is_staff(self):
+        return self.professor
+
+    def has_module_perms(self, atividades):
+        return True
+
+    USERNAME_FIELD = 'email'
+
+    EMAIL_FIELD = 'email'
+
+    REQUIRED_FIELDS = ['nome', 'cpf', 'sexo',  'professor' ]
+
+

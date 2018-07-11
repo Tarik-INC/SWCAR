@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from .models import Atividade
-from .forms import AtividadeForm
-
+from .forms import AtividadeForm, CriarUsuarioForm
 
 def listar_atividades(request):
     """[View responsável por direcionar a requisição do usuário
@@ -16,7 +16,7 @@ def listar_atividades(request):
     atividades = Atividade.object.all();
     return render(request, 'pages/atividades.html', {'atividades': atividades.order_by('nome')})
 
-
+@login_required
 def criar_atividade(request):
     """[View resposável  por sintetizar um formulário de cadastro de atividades em uma página HTML 
       ou gravar no BD os dados gerados pelo POST da requisição]
@@ -36,7 +36,7 @@ def criar_atividade(request):
 
     return render(request, 'pages/atividade_form.html', {'form': form_atividade})
 
-
+@login_required
 def editar_atividade(request, id):
 
     """[View resposável por sintetizar um formulário de edição de atividades em uma página HTML 
@@ -58,7 +58,7 @@ def editar_atividade(request, id):
 
     return render(request, 'pages/atividade_form.html', {'form': form_atividade})
 
-
+@login_required
 def deletar_atividade(request, id):
     """[View resposável por sintetizar um formulário de deleção de atividades em uma página HTML  
     ou gravar no BD os dados removidos pelo POST da requisição]
@@ -78,3 +78,17 @@ def deletar_atividade(request, id):
         return redirect('playlist')
 
     return render(request, 'pages/atividade_delete_confirm.html', {'form': form_atividade})
+
+def cadastrar_usuario(request):
+
+    formUsuario = CriarUsuarioForm(request.POST or None)
+
+    if request.method == 'POST':
+        if formUsuario.is_valid():
+            formUsuario.save()
+            return redirect('login')
+
+    return render(request, 'pages/usuario_cadastro.html', {'form': formUsuario})
+
+def inicio(request):
+    return render(request, 'pages/index.html')

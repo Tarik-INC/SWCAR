@@ -1,6 +1,9 @@
 from django.forms import ModelForm
+from django import forms
 from django.core.exceptions import ValidationError
-from .models import Atividade
+from .models import Atividade, Usuario
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import User
 from datetime import datetime
 
 class AtividadeForm(ModelForm):
@@ -25,3 +28,16 @@ class AtividadeForm(ModelForm):
             raise ValidationError('Prazo inserido está incorreto')
         
         return data_completa_prazo
+
+class CriarUsuarioForm(ModelForm):
+
+    class Meta:
+        model = Usuario
+        labels = {
+            "password": "Senha"
+        }
+
+        fields = '__all__'
+        exclude = 'is_active', 'is_admin', 'last_login'
+
+  
