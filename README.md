@@ -39,7 +39,7 @@ Essas pastas representam:
 1. **Commit**: Commits devem representar funcionalidades descritas através dos *issues* organizadas no backlog. Cada commit pode ser divido em tres subgrupos de forma a padronizar seu uso: 
 * **Conclusão de uma *issue***: A mensagem do commit deve possuir  uma das seguintes  palavras chaves *close*, *closes*, *closed*, *resolve*, *resolves*, *resolved*  seguido do hastag e número da issue correspondente. 
 * **Fix de uma funcionalidade**: A mensagem  do commit deve possuir uma das seguintes palavras chaves *fix*, *fixes*, *fixed* seguido do hastag e número da issue correspondente.
-* **Conclusão parcial de uma *issue****: A mensagem  do commit deve ser constituida da plavra chave *parcial* seguida do hastag e o número da issue correspondente.
+* **Conclusão parcial de uma *issue***: A mensagem  do commit deve ser constituida da plavra chave *parcial* seguida do hastag e o número da issue correspondente.
 
 2. **Branch**: Existem dois tipos de branches sem citar a master. Branch de teste, que representa a branch em que as funcionalidades commitadas passam por testes, formalizando conclusões sobre a necessidade de correções,  se a funcionalidade desenvolvida acrescenta algo ao sistema ou se está de acordo com os requesistos documentados no backlog. Branch da iteracão, que possui um backup da master, é nela em que as funcionalidades criadas e testadas são integradas ao restante do sistema, observando qualquer incoerência ou conflito com o que já foi desenvolvido e suficientemente testado. 
 
