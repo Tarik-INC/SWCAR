@@ -9,7 +9,11 @@ from datetime import datetime
 class AtividadeForm(ModelForm):
     class Meta:
         model = Atividade
+        labels = {
+            "upload": "Documento de justificativa"
+        }
         fields = ['nome', 'descricao', 'prazo', 'em_equipe', 'trofeu']
+        
 
     def clean_nome(self):
         nome = self.cleaned_data['nome'] 

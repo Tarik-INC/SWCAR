@@ -13,6 +13,15 @@ class Trofeu(models.Model):
         else:
             return f"{self.nome}-{self.pontuacao} ponto"
 """
+def user_directory_path(instance, filename):
+    """
+        Método auxiliar responsável por determinar um caminho para
+        arquivos salvos por usuários
+    """
+    # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
+    return 'user_{0}/{1}'.format(instance.user.id, filename)
+
+
 
 TROFEU_DEFAULT_ID = 1
 
@@ -31,6 +40,7 @@ class Atividade(models.Model):
 
 
     trofeu = models.IntegerField(choices = escolha_trofeu, default =1)
+    upload = models.FileField(upload_to=user_directory_path)
 
     def __str__(self):
         return f'Atividade: {self.nome}, trofeu: {self.trofeu}\n'

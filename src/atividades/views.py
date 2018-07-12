@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Atividade
 from .forms import AtividadeForm, CriarUsuarioForm
 
+@login_required
 def listar_atividades(request):
     """[View responsável por direcionar a requisição do usuário
     para a página de listagem de atividades já criadas]
