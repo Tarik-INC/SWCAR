@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE= [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -136,4 +136,6 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = 'playlist'
 
 AUTH_USER_MODEL = 'atividades.Usuario'
+
+AUTHENTICATION_BACKENDS = ('atividades.backends.MyAuthBackend', 'django.contrib.auth.backends.ModelBackend')
 

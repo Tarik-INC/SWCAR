@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import Atividade
-from .forms import AtividadeForm, CriarUsuarioForm
+from .forms import AtividadeForm, CriarUsuarioForm, AtividadeSelecionarForm
 
 @login_required
 def listar_atividades(request):
@@ -16,6 +17,15 @@ def listar_atividades(request):
     """
     atividades = Atividade.object.all();
     return render(request, 'pages/atividades.html', {'atividades': atividades.order_by('nome')})
+
+@login_required
+def selecionar_atividade(request, nome):
+
+    form_atividade = AtividadeSelecionarForm(Atividade.object.get(nome = nome) or None)
+
+    return render(request, 'pages/atividade_form.html', {'form': form_atividade})
+
+
 
 @login_required
 def criar_atividade(request):
@@ -88,6 +98,7 @@ def cadastrar_usuario(request):
         if formUsuario.is_valid():
             formUsuario.save()
             return redirect('login')
+            messages.success(request, 'Cont criada com sucesso')
 
     return render(request, 'pages/usuario_cadastro.html', {'form': formUsuario})
 

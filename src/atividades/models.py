@@ -40,7 +40,7 @@ class Atividade(models.Model):
 
 
     trofeu = models.IntegerField(choices = escolha_trofeu, default =1)
-    upload = models.FileField(upload_to=user_directory_path)
+    justificativa = models.FileField(upload_to=user_directory_path, null = True, blank = True)
 
     def __str__(self):
         return f'Atividade: {self.nome}, trofeu: {self.trofeu}\n'
@@ -58,7 +58,7 @@ class Atividade(models.Model):
 
 class UsuarioManager(BaseUserManager):
 
-    def create_user(self, email, cpf, sexo, professor, password=None):
+    def create_user(self, email, nome, cpf, sexo, professor, password=None):
         """
         Cria e salva um usuário com dado email, cpf, sexo,
         se ele é professor e senha opcional
@@ -68,6 +68,7 @@ class UsuarioManager(BaseUserManager):
 
         user = self.model(
             email=self.normalize_email(email),
+            nome = nome,
             cpf=cpf,
             sexo = sexo,
             professor = professor
@@ -77,13 +78,14 @@ class UsuarioManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, cpf, sexo, professor, password):
+    def create_superuser(self, email, nome, cpf, sexo, professor, password):
         """
         Cria e salva um super usuário com dado email, cpf, sexo, se ele
         é professor e senha obrigatória 
         """
         user = self.create_user(
             email,
+            nome = nome,
             cpf=cpf,
             sexo = sexo,
             professor = professor,
@@ -96,7 +98,7 @@ class UsuarioManager(BaseUserManager):
 
 class Usuario(AbstractBaseUser):
     nome = models.CharField(max_length=30)
-    cpf = models.CharField(max_length=11, primary_key = True)
+    cpf = models.CharField(max_length=14, primary_key = True)
     email = models.EmailField(max_length = 120, default = 'exemplo@exemplo.com', unique =True)
     instituicao = models.CharField(max_length = 50, blank = True, null = True)
     escolha_sexo = (
@@ -108,7 +110,7 @@ class Usuario(AbstractBaseUser):
     sexo = models.CharField(
         max_length=20, choices=escolha_sexo, default='open')
     professor = models.BooleanField(default=False)
-    password = models.CharField(max_length=50)
+    password = models.CharField(max_length=255)
     objects = UsuarioManager()
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
@@ -125,6 +127,10 @@ class Usuario(AbstractBaseUser):
 
     def has_module_perms(self, atividades):
         return True
+    
+    def has_perm(self, perm, obj=None):
+        return self.is_staff
+
 
     USERNAME_FIELD = 'email'
 
