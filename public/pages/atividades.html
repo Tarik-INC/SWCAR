@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="{% static 'ext/css/core.css' %}"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,900" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     </head>
     <body>
         <header>
@@ -32,6 +33,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="ranking.html">Ranking</a>
                             </li>
+                            <li class = "nav-item">
+                                <a class = "nav-link" href = "{% url 'logout' %}"> Logout </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -41,14 +45,14 @@
             <section id="conteudoAtividade">
                 <div class="container">    
                     <div class="row">
-                        <h1>atividades</h1>
+                        <h1>Playlist de Atividades</h1>
                     </div> 
                     <hr/>
                     <div class="row">
                         <table>
                             <thead>
                                 <tr>
-                                    <td colspan="5"><h2>segunda iteração</h2></td>
+                                    <td colspan="5"><h2>Atividades disponíveis</h2></td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,27 +63,30 @@
                                 </tr>
                                 <tr>
                                     {% for atividade in atividades  %}
-                                    <td style="width: 33%">
-                                        <div class="subtd">
-                                            {% if atividade.trofeu == 3 %}
-                                                <img   src="{% static 'img/trophy3.svg' %}"/>
-                                            {% elif atividade.trofeu == 5 %}
-                                                <img   src="{% static 'img/trophy2.svg' %}"/>
-                                            {% else %}
-                                                <img  src="{% static 'img/trophy.svg' %}"/>
-                                            {% endif %} 
-                                        </div>
-                                        <div class="subtd">
-                                            <p>{{atividade.descricao}}</p>
-                                            <div>
-                                                {% if atividade.em_equipe == True %}
-                                                <span class="badge badge-warning">Em equipe</span>
+                                    <div class = "elemento-atividade">
+                                        <td style="width: 33%">
+                                            <div class="subtd">
+                                                {% if atividade.trofeu == 3 %}
+                                                    <img   src="{% static 'img/trophy3.svg' %}"/>
+                                                {% elif atividade.trofeu == 5 %}
+                                                    <img   src="{% static 'img/trophy2.svg' %}"/>
                                                 {% else %}
-                                                <span class="badge badge-warning">Individual</span>
-                                                {% endif %}
+                                                    <img  src="{% static 'img/trophy.svg' %}"/>
+                                                {% endif %} 
                                             </div>
-                                        </div>
-                                    </td>
+                                            <div class="subtd">
+                                                <p>{{atividade.descricao}}</p>
+                                                <div>
+                                                    {% if atividade.em_equipe == True %}
+                                                    <span class="badge badge-warning">Em equipe</span>
+                                                    {% else %}
+                                                    <span class="badge badge-warning">Individual</span>
+                                                    {% endif %}
+                                                    <button type="button" style = "display: block;margin:auto" class="btn btn-danger" onclick="location.href={% url 'atividade_selecionada' 'xml e json' %}">Escolher</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </div>
                                     {% endfor %}
                                 </tr>
                             </tbody>
@@ -91,6 +98,15 @@
         <footer>
 
         </footer>
+         <script>
+             $(".elemento_atividade").hover( function() {
+                 $(this).addClass('hover').append(<button type="button" class="btn btn-danger">Danger</button>)
+             }, function() {
+                $(this).removeClass('hover').find('button').remove();
+             }
+
+            )
+         </script>
     </body>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

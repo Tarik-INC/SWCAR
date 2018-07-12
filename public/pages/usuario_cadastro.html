@@ -4,21 +4,25 @@
 <link rel="stylesheet" href="{% static 'ext/css/core.css' %}"/>
 <title> Cadastro de Usuários </title>
 {% block main %}
-   
+
+    <div class = "jumbotron">
         <div class = "col-md-6 offset-md-3"> 
-            <div class = "jumbotron">
             
-                <div class="page-header">
-                    <h1 class = "text-center text-primary" style = "margin-bottom: 45px">Cadastro de usuários</h1>
-                </div>    
-                <form action="{% url 'cadastrar_usuario'%}" method="POST">
-                    {% csrf_token %} 
-                    {{form | bootstrap}}
-                    <div style = "text-align: center;">
-                        <button type="submit" class="btn btn-primary text-center"> Salvar Cadastro</button>
-                    </div>
-                </form>
-            </div>
-        </div>  
+        
+            <div class="page-header">
+                <h1 class = "text-center text-primary" style = "margin-bottom: 45px">Cadastro de usuários</h1>
+            </div>    
+            <form action="{% url 'cadastrar_usuario'%}" method="POST">
+                {% csrf_token %} 
+                {{form | bootstrap}}
+                
+            </form>
+        
+        </div>
+        <div style = "text-align: center;">
+            <button type="submit" class="btn btn-primary text-center "> Salvar Cadastro</button>
+        </div>
+
+    </div>  
 
 {% endblock %}
